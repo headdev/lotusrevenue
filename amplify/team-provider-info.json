@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lottus-staging-52604-authRole",
+      "UnauthRoleArn": "arn:aws:iam::268621482089:role/amplify-lottus-staging-52604-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::268621482089:role/amplify-lottus-staging-52604-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-lottus-staging-52604-deployment",
+      "UnauthRoleName": "amplify-lottus-staging-52604-unauthRole",
+      "StackName": "amplify-lottus-staging-52604",
+      "StackId": "arn:aws:cloudformation:us-east-1:268621482089:stack/amplify-lottus-staging-52604/4b93eae0-074f-11ee-80bc-129098fed75d",
+      "AmplifyAppId": "d1un4m1j0jryyc"
+    },
+    "categories": {
+      "auth": {
+        "lottus": {}
+      }
+    }
+  }
+}
