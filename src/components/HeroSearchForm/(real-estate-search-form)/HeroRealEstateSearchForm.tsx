@@ -3,7 +3,7 @@
 import React, { FC, useState } from "react";
 import RealEstateSearchForm from "./RealEstateSearchForm";
 
-export type SearchRealEstateTab = "Buy" | "Rent" | "Sell";
+export type SearchRealEstateTab = "Buy" | "Sell";
 
 export interface HeroRealEstateSearchFormProps {
   className?: string;
@@ -14,7 +14,7 @@ const HeroRealEstateSearchForm: FC<HeroRealEstateSearchFormProps> = ({
   className = "",
   currentTab = "Buy",
 }) => {
-  const tabs: SearchRealEstateTab[] = ["Buy", "Rent", "Sell"];
+  const tabs: SearchRealEstateTab[] = ["Buy", "Sell"];
   const [tabActive, setTabActive] = useState<SearchRealEstateTab>(currentTab);
 
   const renderTab = () => {

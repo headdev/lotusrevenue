@@ -28,7 +28,7 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "", children }) => {
               children
             ) : (
               <h2 className="font-semibold text-4xl md:text-5xl xl:text-7xl !leading-[110%]">
-               Encuentra Ahora  <br /> La casa de tus sueños 
+                Find your <br /> Best Investment
               </h2>
             )}
           </div>

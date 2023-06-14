@@ -117,8 +117,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
         <Logo />
         <div className="flex flex-col mt-5 text-neutral-700 dark:text-neutral-300 text-sm">
           <span>
-            Discover the most outstanding articles on all topics of life. Write
-            your stories and share them
+            Discover endless opportunities at Lotus Revenue powered by Web3.0
           </span>
 
           <div className="flex justify-between items-center mt-4">
@@ -138,11 +137,11 @@ const NavMobile: React.FC<NavMobileProps> = ({
       <div className="flex items-center justify-between py-6 px-5">
         <a
           className="inline-block"
-          href="https://themeforest.net/item/chisfis-online-booking-react-template/33515927"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ButtonPrimary>Get Template</ButtonPrimary>
+          <ButtonPrimary>Get Mobile App</ButtonPrimary>
         </a>
 
         <LangDropdown panelClassName="z-10 w-screen max-w-[280px] px-4 mb-3 -right-3 bottom-full sm:px-0" />

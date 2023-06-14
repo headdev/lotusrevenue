@@ -28,12 +28,17 @@ export const createUser = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
@@ -72,12 +77,17 @@ export const updateUser = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
@@ -116,12 +126,17 @@ export const deleteUser = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
@@ -325,12 +340,17 @@ export const createRealState = /* GraphQL */ `
       }
       priceUSD
       title
+      description
       bedroom
       createdAt
       updatedAt
       bathrooms
       area
       country
+      score
+      amenities
+      surplusValue
+      profitability
       city
       ubication
       userID
@@ -358,12 +378,17 @@ export const updateRealState = /* GraphQL */ `
       }
       priceUSD
       title
+      description
       bedroom
       createdAt
       updatedAt
       bathrooms
       area
       country
+      score
+      amenities
+      surplusValue
+      profitability
       city
       ubication
       userID
@@ -391,12 +416,17 @@ export const deleteRealState = /* GraphQL */ `
       }
       priceUSD
       title
+      description
       bedroom
       createdAt
       updatedAt
       bathrooms
       area
       country
+      score
+      amenities
+      surplusValue
+      profitability
       city
       ubication
       userID
@@ -434,12 +464,17 @@ export const createPost = /* GraphQL */ `
         }
         priceUSD
         title
+        description
         bedroom
         createdAt
         updatedAt
         bathrooms
         area
         country
+        score
+        amenities
+        surplusValue
+        profitability
         city
         ubication
         userID
@@ -478,12 +513,17 @@ export const updatePost = /* GraphQL */ `
         }
         priceUSD
         title
+        description
         bedroom
         createdAt
         updatedAt
         bathrooms
         area
         country
+        score
+        amenities
+        surplusValue
+        profitability
         city
         ubication
         userID
@@ -522,12 +562,17 @@ export const deletePost = /* GraphQL */ `
         }
         priceUSD
         title
+        description
         bedroom
         createdAt
         updatedAt
         bathrooms
         area
         country
+        score
+        amenities
+        surplusValue
+        profitability
         city
         ubication
         userID
@@ -557,12 +602,17 @@ export const createComment = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
@@ -620,12 +670,17 @@ export const updateComment = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
@@ -683,12 +738,17 @@ export const deleteComment = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID

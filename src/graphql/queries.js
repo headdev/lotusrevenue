@@ -25,12 +25,17 @@ export const getUser = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
@@ -214,12 +219,17 @@ export const getRealState = /* GraphQL */ `
       }
       priceUSD
       title
+      description
       bedroom
       createdAt
       updatedAt
       bathrooms
       area
       country
+      score
+      amenities
+      surplusValue
+      profitability
       city
       ubication
       userID
@@ -241,12 +251,17 @@ export const listRealStates = /* GraphQL */ `
         }
         priceUSD
         title
+        description
         bedroom
         createdAt
         updatedAt
         bathrooms
         area
         country
+        score
+        amenities
+        surplusValue
+        profitability
         city
         ubication
         userID
@@ -278,12 +293,17 @@ export const realStatesByUserID = /* GraphQL */ `
         }
         priceUSD
         title
+        description
         bedroom
         createdAt
         updatedAt
         bathrooms
         area
         country
+        score
+        amenities
+        surplusValue
+        profitability
         city
         ubication
         userID
@@ -320,12 +340,17 @@ export const getPost = /* GraphQL */ `
         }
         priceUSD
         title
+        description
         bedroom
         createdAt
         updatedAt
         bathrooms
         area
         country
+        score
+        amenities
+        surplusValue
+        profitability
         city
         ubication
         userID
@@ -355,12 +380,17 @@ export const listPosts = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
@@ -400,12 +430,17 @@ export const postsByRID = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
@@ -434,12 +469,17 @@ export const getComment = /* GraphQL */ `
           name
           priceUSD
           title
+          description
           bedroom
           createdAt
           updatedAt
           bathrooms
           area
           country
+          score
+          amenities
+          surplusValue
+          profitability
           city
           ubication
           userID
