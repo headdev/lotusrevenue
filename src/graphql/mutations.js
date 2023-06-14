@@ -1,21 +1,42 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createBlog = /* GraphQL */ `
-  mutation CreateBlog(
-    $input: CreateBlogInput!
-    $condition: ModelBlogConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createBlog(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
       name
-      posts {
+      phone_number
+      address
+      email
+      isCompletedKYC
+      currentStateKYC
+      externalURLKYC
+      hasSigned
+      dateSigned
+      isPaymentProcessing
+      username
+      isBanned
+      isAgent
+      isSupport
+      properties {
         items {
           id
+          name
+          priceUSD
           title
+          bedroom
           createdAt
           updatedAt
-          blogPostsId
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
         nextToken
       }
@@ -24,21 +45,42 @@ export const createBlog = /* GraphQL */ `
     }
   }
 `;
-export const updateBlog = /* GraphQL */ `
-  mutation UpdateBlog(
-    $input: UpdateBlogInput!
-    $condition: ModelBlogConditionInput
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    updateBlog(input: $input, condition: $condition) {
+    updateUser(input: $input, condition: $condition) {
       id
       name
-      posts {
+      phone_number
+      address
+      email
+      isCompletedKYC
+      currentStateKYC
+      externalURLKYC
+      hasSigned
+      dateSigned
+      isPaymentProcessing
+      username
+      isBanned
+      isAgent
+      isSupport
+      properties {
         items {
           id
+          name
+          priceUSD
           title
+          bedroom
           createdAt
           updatedAt
-          blogPostsId
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
         nextToken
       }
@@ -47,26 +89,146 @@ export const updateBlog = /* GraphQL */ `
     }
   }
 `;
-export const deleteBlog = /* GraphQL */ `
-  mutation DeleteBlog(
-    $input: DeleteBlogInput!
-    $condition: ModelBlogConditionInput
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    deleteBlog(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
+      id
+      name
+      phone_number
+      address
+      email
+      isCompletedKYC
+      currentStateKYC
+      externalURLKYC
+      hasSigned
+      dateSigned
+      isPaymentProcessing
+      username
+      isBanned
+      isAgent
+      isSupport
+      properties {
+        items {
+          id
+          name
+          priceUSD
+          title
+          bedroom
+          createdAt
+          updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createRealState = /* GraphQL */ `
+  mutation CreateRealState(
+    $input: CreateRealStateInput!
+    $condition: ModelRealStateConditionInput
+  ) {
+    createRealState(input: $input, condition: $condition) {
       id
       name
       posts {
         items {
           id
           title
+          rID
+          description
           createdAt
           updatedAt
-          blogPostsId
         }
         nextToken
       }
+      priceUSD
+      title
+      bedroom
       createdAt
       updatedAt
+      bathrooms
+      area
+      country
+      city
+      ubication
+      userID
+    }
+  }
+`;
+export const updateRealState = /* GraphQL */ `
+  mutation UpdateRealState(
+    $input: UpdateRealStateInput!
+    $condition: ModelRealStateConditionInput
+  ) {
+    updateRealState(input: $input, condition: $condition) {
+      id
+      name
+      posts {
+        items {
+          id
+          title
+          rID
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      priceUSD
+      title
+      bedroom
+      createdAt
+      updatedAt
+      bathrooms
+      area
+      country
+      city
+      ubication
+      userID
+    }
+  }
+`;
+export const deleteRealState = /* GraphQL */ `
+  mutation DeleteRealState(
+    $input: DeleteRealStateInput!
+    $condition: ModelRealStateConditionInput
+  ) {
+    deleteRealState(input: $input, condition: $condition) {
+      id
+      name
+      posts {
+        items {
+          id
+          title
+          rID
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      priceUSD
+      title
+      bedroom
+      createdAt
+      updatedAt
+      bathrooms
+      area
+      country
+      city
+      ubication
+      userID
     }
   }
 `;
@@ -78,15 +240,6 @@ export const createPost = /* GraphQL */ `
     createPost(input: $input, condition: $condition) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -94,12 +247,32 @@ export const createPost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          commentAuthorId
         }
         nextToken
       }
+      rID
+      description
       createdAt
       updatedAt
-      blogPostsId
+      posts {
+        id
+        name
+        posts {
+          nextToken
+        }
+        priceUSD
+        title
+        bedroom
+        createdAt
+        updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
+      }
     }
   }
 `;
@@ -111,15 +284,6 @@ export const updatePost = /* GraphQL */ `
     updatePost(input: $input, condition: $condition) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -127,12 +291,32 @@ export const updatePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          commentAuthorId
         }
         nextToken
       }
+      rID
+      description
       createdAt
       updatedAt
-      blogPostsId
+      posts {
+        id
+        name
+        posts {
+          nextToken
+        }
+        priceUSD
+        title
+        bedroom
+        createdAt
+        updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
+      }
     }
   }
 `;
@@ -144,15 +328,6 @@ export const deletePost = /* GraphQL */ `
     deletePost(input: $input, condition: $condition) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -160,12 +335,32 @@ export const deletePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          commentAuthorId
         }
         nextToken
       }
+      rID
+      description
       createdAt
       updatedAt
-      blogPostsId
+      posts {
+        id
+        name
+        posts {
+          nextToken
+        }
+        priceUSD
+        title
+        bedroom
+        createdAt
+        updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
+      }
     }
   }
 `;
@@ -179,23 +374,56 @@ export const createComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
+        comments {
+          nextToken
+        }
+        rID
+        description
+        createdAt
+        updatedAt
+        posts {
           id
           name
+          priceUSD
+          title
+          bedroom
           createdAt
           updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
-        comments {
+      }
+      content
+      author {
+        id
+        name
+        phone_number
+        address
+        email
+        isCompletedKYC
+        currentStateKYC
+        externalURLKYC
+        hasSigned
+        dateSigned
+        isPaymentProcessing
+        username
+        isBanned
+        isAgent
+        isSupport
+        properties {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
-      content
       createdAt
       updatedAt
       postCommentsId
+      commentAuthorId
     }
   }
 `;
@@ -209,23 +437,56 @@ export const updateComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
+        comments {
+          nextToken
+        }
+        rID
+        description
+        createdAt
+        updatedAt
+        posts {
           id
           name
+          priceUSD
+          title
+          bedroom
           createdAt
           updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
-        comments {
+      }
+      content
+      author {
+        id
+        name
+        phone_number
+        address
+        email
+        isCompletedKYC
+        currentStateKYC
+        externalURLKYC
+        hasSigned
+        dateSigned
+        isPaymentProcessing
+        username
+        isBanned
+        isAgent
+        isSupport
+        properties {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
-      content
       createdAt
       updatedAt
       postCommentsId
+      commentAuthorId
     }
   }
 `;
@@ -239,23 +500,56 @@ export const deleteComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
+        comments {
+          nextToken
+        }
+        rID
+        description
+        createdAt
+        updatedAt
+        posts {
           id
           name
+          priceUSD
+          title
+          bedroom
           createdAt
           updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
-        comments {
+      }
+      content
+      author {
+        id
+        name
+        phone_number
+        address
+        email
+        isCompletedKYC
+        currentStateKYC
+        externalURLKYC
+        hasSigned
+        dateSigned
+        isPaymentProcessing
+        username
+        isBanned
+        isAgent
+        isSupport
+        properties {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
-      content
       createdAt
       updatedAt
       postCommentsId
+      commentAuthorId
     }
   }
 `;

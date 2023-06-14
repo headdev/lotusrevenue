@@ -1,18 +1,39 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlog = /* GraphQL */ `
-  subscription OnCreateBlog($filter: ModelSubscriptionBlogFilterInput) {
-    onCreateBlog(filter: $filter) {
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
+    onCreateUser(filter: $filter) {
       id
       name
-      posts {
+      phone_number
+      address
+      email
+      isCompletedKYC
+      currentStateKYC
+      externalURLKYC
+      hasSigned
+      dateSigned
+      isPaymentProcessing
+      username
+      isBanned
+      isAgent
+      isSupport
+      properties {
         items {
           id
+          name
+          priceUSD
           title
+          bedroom
           createdAt
           updatedAt
-          blogPostsId
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
         nextToken
       }
@@ -21,18 +42,39 @@ export const onCreateBlog = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateBlog = /* GraphQL */ `
-  subscription OnUpdateBlog($filter: ModelSubscriptionBlogFilterInput) {
-    onUpdateBlog(filter: $filter) {
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser($filter: ModelSubscriptionUserFilterInput) {
+    onUpdateUser(filter: $filter) {
       id
       name
-      posts {
+      phone_number
+      address
+      email
+      isCompletedKYC
+      currentStateKYC
+      externalURLKYC
+      hasSigned
+      dateSigned
+      isPaymentProcessing
+      username
+      isBanned
+      isAgent
+      isSupport
+      properties {
         items {
           id
+          name
+          priceUSD
           title
+          bedroom
           createdAt
           updatedAt
-          blogPostsId
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
         nextToken
       }
@@ -41,23 +83,140 @@ export const onUpdateBlog = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteBlog = /* GraphQL */ `
-  subscription OnDeleteBlog($filter: ModelSubscriptionBlogFilterInput) {
-    onDeleteBlog(filter: $filter) {
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser($filter: ModelSubscriptionUserFilterInput) {
+    onDeleteUser(filter: $filter) {
+      id
+      name
+      phone_number
+      address
+      email
+      isCompletedKYC
+      currentStateKYC
+      externalURLKYC
+      hasSigned
+      dateSigned
+      isPaymentProcessing
+      username
+      isBanned
+      isAgent
+      isSupport
+      properties {
+        items {
+          id
+          name
+          priceUSD
+          title
+          bedroom
+          createdAt
+          updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateRealState = /* GraphQL */ `
+  subscription OnCreateRealState(
+    $filter: ModelSubscriptionRealStateFilterInput
+  ) {
+    onCreateRealState(filter: $filter) {
       id
       name
       posts {
         items {
           id
           title
+          rID
+          description
           createdAt
           updatedAt
-          blogPostsId
         }
         nextToken
       }
+      priceUSD
+      title
+      bedroom
       createdAt
       updatedAt
+      bathrooms
+      area
+      country
+      city
+      ubication
+      userID
+    }
+  }
+`;
+export const onUpdateRealState = /* GraphQL */ `
+  subscription OnUpdateRealState(
+    $filter: ModelSubscriptionRealStateFilterInput
+  ) {
+    onUpdateRealState(filter: $filter) {
+      id
+      name
+      posts {
+        items {
+          id
+          title
+          rID
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      priceUSD
+      title
+      bedroom
+      createdAt
+      updatedAt
+      bathrooms
+      area
+      country
+      city
+      ubication
+      userID
+    }
+  }
+`;
+export const onDeleteRealState = /* GraphQL */ `
+  subscription OnDeleteRealState(
+    $filter: ModelSubscriptionRealStateFilterInput
+  ) {
+    onDeleteRealState(filter: $filter) {
+      id
+      name
+      posts {
+        items {
+          id
+          title
+          rID
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      priceUSD
+      title
+      bedroom
+      createdAt
+      updatedAt
+      bathrooms
+      area
+      country
+      city
+      ubication
+      userID
     }
   }
 `;
@@ -66,15 +225,6 @@ export const onCreatePost = /* GraphQL */ `
     onCreatePost(filter: $filter) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -82,12 +232,32 @@ export const onCreatePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          commentAuthorId
         }
         nextToken
       }
+      rID
+      description
       createdAt
       updatedAt
-      blogPostsId
+      posts {
+        id
+        name
+        posts {
+          nextToken
+        }
+        priceUSD
+        title
+        bedroom
+        createdAt
+        updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
+      }
     }
   }
 `;
@@ -96,15 +266,6 @@ export const onUpdatePost = /* GraphQL */ `
     onUpdatePost(filter: $filter) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -112,12 +273,32 @@ export const onUpdatePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          commentAuthorId
         }
         nextToken
       }
+      rID
+      description
       createdAt
       updatedAt
-      blogPostsId
+      posts {
+        id
+        name
+        posts {
+          nextToken
+        }
+        priceUSD
+        title
+        bedroom
+        createdAt
+        updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
+      }
     }
   }
 `;
@@ -126,15 +307,6 @@ export const onDeletePost = /* GraphQL */ `
     onDeletePost(filter: $filter) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -142,12 +314,32 @@ export const onDeletePost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          commentAuthorId
         }
         nextToken
       }
+      rID
+      description
       createdAt
       updatedAt
-      blogPostsId
+      posts {
+        id
+        name
+        posts {
+          nextToken
+        }
+        priceUSD
+        title
+        bedroom
+        createdAt
+        updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
+      }
     }
   }
 `;
@@ -158,23 +350,56 @@ export const onCreateComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
+        comments {
+          nextToken
+        }
+        rID
+        description
+        createdAt
+        updatedAt
+        posts {
           id
           name
+          priceUSD
+          title
+          bedroom
           createdAt
           updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
-        comments {
+      }
+      content
+      author {
+        id
+        name
+        phone_number
+        address
+        email
+        isCompletedKYC
+        currentStateKYC
+        externalURLKYC
+        hasSigned
+        dateSigned
+        isPaymentProcessing
+        username
+        isBanned
+        isAgent
+        isSupport
+        properties {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
-      content
       createdAt
       updatedAt
       postCommentsId
+      commentAuthorId
     }
   }
 `;
@@ -185,23 +410,56 @@ export const onUpdateComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
+        comments {
+          nextToken
+        }
+        rID
+        description
+        createdAt
+        updatedAt
+        posts {
           id
           name
+          priceUSD
+          title
+          bedroom
           createdAt
           updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
-        comments {
+      }
+      content
+      author {
+        id
+        name
+        phone_number
+        address
+        email
+        isCompletedKYC
+        currentStateKYC
+        externalURLKYC
+        hasSigned
+        dateSigned
+        isPaymentProcessing
+        username
+        isBanned
+        isAgent
+        isSupport
+        properties {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
-      content
       createdAt
       updatedAt
       postCommentsId
+      commentAuthorId
     }
   }
 `;
@@ -212,23 +470,56 @@ export const onDeleteComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
+        comments {
+          nextToken
+        }
+        rID
+        description
+        createdAt
+        updatedAt
+        posts {
           id
           name
+          priceUSD
+          title
+          bedroom
           createdAt
           updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
-        comments {
+      }
+      content
+      author {
+        id
+        name
+        phone_number
+        address
+        email
+        isCompletedKYC
+        currentStateKYC
+        externalURLKYC
+        hasSigned
+        dateSigned
+        isPaymentProcessing
+        username
+        isBanned
+        isAgent
+        isSupport
+        properties {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
-      content
       createdAt
       updatedAt
       postCommentsId
+      commentAuthorId
     }
   }
 `;

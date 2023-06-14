@@ -1,18 +1,39 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
       name
-      posts {
+      phone_number
+      address
+      email
+      isCompletedKYC
+      currentStateKYC
+      externalURLKYC
+      hasSigned
+      dateSigned
+      isPaymentProcessing
+      username
+      isBanned
+      isAgent
+      isSupport
+      properties {
         items {
           id
+          name
+          priceUSD
           title
+          bedroom
           createdAt
           updatedAt
-          blogPostsId
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
         nextToken
       }
@@ -21,21 +42,130 @@ export const getBlog = /* GraphQL */ `
     }
   }
 `;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        phone_number
+        address
+        email
+        isCompletedKYC
+        currentStateKYC
+        externalURLKYC
+        hasSigned
+        dateSigned
+        isPaymentProcessing
+        username
+        isBanned
+        isAgent
+        isSupport
+        properties {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getRealState = /* GraphQL */ `
+  query GetRealState($id: ID!) {
+    getRealState(id: $id) {
+      id
+      name
+      posts {
+        items {
+          id
+          title
+          rID
+          description
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      priceUSD
+      title
+      bedroom
+      createdAt
+      updatedAt
+      bathrooms
+      area
+      country
+      city
+      ubication
+      userID
+    }
+  }
+`;
+export const listRealStates = /* GraphQL */ `
+  query ListRealStates(
+    $filter: ModelRealStateFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRealStates(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name
         posts {
           nextToken
         }
+        priceUSD
+        title
+        bedroom
         createdAt
         updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
+      }
+      nextToken
+    }
+  }
+`;
+export const realStatesByUserID = /* GraphQL */ `
+  query RealStatesByUserID(
+    $userID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelRealStateFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    realStatesByUserID(
+      userID: $userID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        posts {
+          nextToken
+        }
+        priceUSD
+        title
+        bedroom
+        createdAt
+        updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
       }
       nextToken
     }
@@ -46,15 +176,6 @@ export const getPost = /* GraphQL */ `
     getPost(id: $id) {
       id
       title
-      blog {
-        id
-        name
-        posts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       comments {
         items {
           id
@@ -62,12 +183,32 @@ export const getPost = /* GraphQL */ `
           createdAt
           updatedAt
           postCommentsId
+          commentAuthorId
         }
         nextToken
       }
+      rID
+      description
       createdAt
       updatedAt
-      blogPostsId
+      posts {
+        id
+        name
+        posts {
+          nextToken
+        }
+        priceUSD
+        title
+        bedroom
+        createdAt
+        updatedAt
+        bathrooms
+        area
+        country
+        city
+        ubication
+        userID
+      }
     }
   }
 `;
@@ -81,18 +222,73 @@ export const listPosts = /* GraphQL */ `
       items {
         id
         title
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
         comments {
           nextToken
         }
+        rID
+        description
         createdAt
         updatedAt
-        blogPostsId
+        posts {
+          id
+          name
+          priceUSD
+          title
+          bedroom
+          createdAt
+          updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
+        }
+      }
+      nextToken
+    }
+  }
+`;
+export const postsByRID = /* GraphQL */ `
+  query PostsByRID(
+    $rID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelPostFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    postsByRID(
+      rID: $rID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        comments {
+          nextToken
+        }
+        rID
+        description
+        createdAt
+        updatedAt
+        posts {
+          id
+          name
+          priceUSD
+          title
+          bedroom
+          createdAt
+          updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
+        }
       }
       nextToken
     }
@@ -105,23 +301,56 @@ export const getComment = /* GraphQL */ `
       post {
         id
         title
-        blog {
+        comments {
+          nextToken
+        }
+        rID
+        description
+        createdAt
+        updatedAt
+        posts {
           id
           name
+          priceUSD
+          title
+          bedroom
           createdAt
           updatedAt
+          bathrooms
+          area
+          country
+          city
+          ubication
+          userID
         }
-        comments {
+      }
+      content
+      author {
+        id
+        name
+        phone_number
+        address
+        email
+        isCompletedKYC
+        currentStateKYC
+        externalURLKYC
+        hasSigned
+        dateSigned
+        isPaymentProcessing
+        username
+        isBanned
+        isAgent
+        isSupport
+        properties {
           nextToken
         }
         createdAt
         updatedAt
-        blogPostsId
       }
-      content
       createdAt
       updatedAt
       postCommentsId
+      commentAuthorId
     }
   }
 `;
@@ -137,14 +366,35 @@ export const listComments = /* GraphQL */ `
         post {
           id
           title
+          rID
+          description
           createdAt
           updatedAt
-          blogPostsId
         }
         content
+        author {
+          id
+          name
+          phone_number
+          address
+          email
+          isCompletedKYC
+          currentStateKYC
+          externalURLKYC
+          hasSigned
+          dateSigned
+          isPaymentProcessing
+          username
+          isBanned
+          isAgent
+          isSupport
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
         postCommentsId
+        commentAuthorId
       }
       nextToken
     }
