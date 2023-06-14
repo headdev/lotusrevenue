@@ -19,7 +19,7 @@ const LocationInput: FC<LocationInputProps> = ({
   autoFocus = false,
   onInputDone,
   placeHolder = "Location",
-  desc = "Where are you going?",
+  desc = "Where are you looking for?",
   className = "nc-flex-1.5",
   divHideVerticalLineClass = "left-10 -right-0.5",
 }) => {

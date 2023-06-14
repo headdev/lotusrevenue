@@ -1,5 +1,6 @@
+// @ts-nocheck
 import Label from "components/Label/Label";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Avatar from "shared/Avatar/Avatar";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
 import Input from "shared/Input/Input";
@@ -7,12 +8,38 @@ import Select from "shared/Select/Select";
 import Textarea from "shared/Textarea/Textarea";
 import CommonLayout from "./CommonLayout";
 import { Helmet } from "react-helmet";
+import { Auth } from "aws-amplify";
 
 export interface AccountPageProps {
   className?: string;
 }
 
 const AccountPage: FC<AccountPageProps> = ({ className = "" }) => {
+  const [user, setuser] = useState();
+
+  const [profile, setProfile] = useState({});
+  const [message, setMessage] = useState("");
+  const [userID, setUserID] = useState("");
+  const [currentUser, setCurrentUser] = useState({});
+  const [currentUserName, setCurrentUserName] = useState("");
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [hasiOSSession, setHasiOSSession] = useState(false);
+  const [hasAndroidSession, setHasAndroidSession] = useState(false);
+  const [deviceOSName, setDeviceOSName] = useState("");
+  const [deviceModelName, setDeviceModelName] = useState("");
+  const [deviceName, setDeviceName] = useState("");
+  const [deviceBrand, setDeviceBrand] = useState("");
+  const [activeDate, setActiveDate] = useState("");
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser().then((user) => {
+      console.log(user);
+      setuser(user);
+    });
+  }, []);
+
   return (
     <div className={`nc-AccountPage ${className}`} data-nc-id="AccountPage">
       <Helmet>
@@ -55,7 +82,10 @@ const AccountPage: FC<AccountPageProps> = ({ className = "" }) => {
             <div className="flex-grow mt-10 md:mt-0 md:pl-16 max-w-3xl space-y-6">
               <div>
                 <Label>Name</Label>
-                <Input className="mt-1.5" defaultValue="Eden Tuan" />
+                <Input
+                  className="mt-1.5"
+                  defaultValue={user && user.attributes.name}
+                />
               </div>
               {/* ---- */}
               <div>
@@ -69,12 +99,18 @@ const AccountPage: FC<AccountPageProps> = ({ className = "" }) => {
               {/* ---- */}
               <div>
                 <Label>Username</Label>
-                <Input className="mt-1.5" defaultValue="@eden_tuan" />
+                <Input
+                  className="mt-1.5"
+                  defaultValue={user && user.username}
+                />
               </div>
               {/* ---- */}
               <div>
                 <Label>Email</Label>
-                <Input className="mt-1.5" defaultValue="example@email.com" />
+                <Input
+                  className="mt-1.5"
+                  defaultValue={user && user.attributes.email}
+                />
               </div>
               {/* ---- */}
               <div className="max-w-lg">
@@ -93,7 +129,10 @@ const AccountPage: FC<AccountPageProps> = ({ className = "" }) => {
               {/* ---- */}
               <div>
                 <Label>Phone number</Label>
-                <Input className="mt-1.5" defaultValue="003 888 232" />
+                <Input
+                  className="mt-1.5"
+                  defaultValue={user && user.attributes.phone_number}
+                />
               </div>
               {/* ---- */}
               <div>

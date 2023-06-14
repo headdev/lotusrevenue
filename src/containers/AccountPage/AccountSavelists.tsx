@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Tab } from "@headlessui/react";
 import CarCard from "components/CarCard/CarCard";
 import ExperiencesCard from "components/ExperiencesCard/ExperiencesCard";
@@ -11,6 +12,18 @@ import React, { Fragment, useState } from "react";
 import ButtonSecondary from "shared/Button/ButtonSecondary";
 import CommonLayout from "./CommonLayout";
 
+const BlurredOverlay = ({ children }) => {
+  return (
+    <div style={{ position: "relative" }}>
+      <div
+        className="absolute inset-0 backdrop-filter backdrop-blur-sm rounded"
+        style={{ zIndex: 1 }}
+      ></div>
+      {children}
+    </div>
+  );
+};
+
 const AccountSavelists = () => {
   let [categories] = useState(["NFTs Fractionals", "Deals & Properties"]);
 
@@ -18,7 +31,7 @@ const AccountSavelists = () => {
     return (
       <div className="space-y-6 sm:space-y-8">
         <div>
-          <h2 className="text-3xl font-semibold">Save lists</h2>
+          <h2 className="text-3xl font-semibold">Save lists (soon)</h2>
         </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
 
@@ -43,25 +56,35 @@ const AccountSavelists = () => {
             </Tab.List>
             <Tab.Panels>
               <Tab.Panel className="mt-8">
-                <div className="grid grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                  {DEMO_STAY_LISTINGS.filter((_, i) => i < 8).map((stay) => (
-                    <StayCard key={stay.id} data={stay} />
-                  ))}
-                </div>
-                <div className="flex mt-11 justify-center items-center">
-                  <ButtonSecondary>Show me more</ButtonSecondary>
+                <div>
+                  <BlurredOverlay>
+                    <div className="grid grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {DEMO_STAY_LISTINGS.filter((_, i) => i < 8).map(
+                        (stay) => (
+                          <StayCard key={stay.id} data={stay} />
+                        )
+                      )}
+                    </div>
+                    <div className="flex mt-11 justify-center items-center">
+                      <ButtonSecondary>Show me more</ButtonSecondary>
+                    </div>
+                  </BlurredOverlay>
                 </div>
               </Tab.Panel>
               <Tab.Panel className="mt-8">
-                <div className="grid grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                  {DEMO_EXPERIENCES_LISTINGS.filter((_, i) => i < 8).map(
-                    (stay) => (
-                      <ExperiencesCard key={stay.id} data={stay} />
-                    )
-                  )}
-                </div>
-                <div className="flex mt-11 justify-center items-center">
-                  <ButtonSecondary>Show me more</ButtonSecondary>
+                <div>
+                  <BlurredOverlay>
+                    <div className="grid grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {DEMO_EXPERIENCES_LISTINGS.filter((_, i) => i < 8).map(
+                        (stay) => (
+                          <ExperiencesCard key={stay.id} data={stay} />
+                        )
+                      )}
+                    </div>
+                    <div className="flex mt-11 justify-center items-center">
+                      <ButtonSecondary>Show me more</ButtonSecondary>
+                    </div>
+                  </BlurredOverlay>
                 </div>
               </Tab.Panel>
               <Tab.Panel className="mt-8">

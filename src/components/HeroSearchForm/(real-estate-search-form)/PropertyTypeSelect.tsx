@@ -6,24 +6,56 @@ import Checkbox from "shared/Checkbox/Checkbox";
 
 const defaultPropertyType: ClassOfProperties[] = [
   {
-    name: "Duplex House",
-    description: "Have a place to yourself",
+    name: "Apartment",
+    description: "A self-contained living unit within a larger building",
     checked: true,
   },
   {
-    name: "Ferme House",
-    description: "Have your own room and share some common spaces",
+    name: "House",
+    description: "A standalone residential building",
     checked: false,
   },
   {
-    name: "Chalet House",
+    name: "Condominium",
+    description: "An individually owned unit within a multi-unit building",
+    checked: false,
+  },
+  {
+    name: "Townhouse",
     description:
-      "Have a private or shared room in a boutique hotel, hostel, and more",
+      "A narrow, multi-level property attached to other similar properties",
     checked: false,
   },
   {
-    name: "Maison House",
-    description: "Stay in a shared space, like a common room",
+    name: "Duplex",
+    description: "A property divided into two separate living units",
+    checked: false,
+  },
+  {
+    name: "Penthouse",
+    description: "A luxury apartment located on the top floor of a building",
+    checked: false,
+  },
+  {
+    name: "Studio",
+    description: "A small, single-room apartment",
+    checked: false,
+  },
+  {
+    name: "Villa",
+    description:
+      "A large, luxurious house often located in a desirable location",
+    checked: false,
+  },
+  {
+    name: "Bungalow",
+    description: "A small, single-story house with a low-pitched roof",
+    checked: false,
+  },
+  {
+    name: "Farmhouse",
+    description:
+      "A house located on a farm, typically with shared common spaces",
     checked: false,
   },
 ];

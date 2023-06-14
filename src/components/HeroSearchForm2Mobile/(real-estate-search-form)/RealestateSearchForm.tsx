@@ -21,13 +21,13 @@ const RealestateSearchForm = () => {
     },
     {
       name: "Ferme House",
-      description: "Have your own room and share some common spaces",
+      description: "have your own house and share some common spaces",
       checked: true,
     },
     {
       name: "Chalet House",
       description:
-        "Have a private or shared room in a boutique hotel, hostel, and more",
+        "Have a private or shared land in a boutique hotel, hostel, and more",
       checked: true,
     },
     {
