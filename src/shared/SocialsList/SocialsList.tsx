@@ -29,8 +29,8 @@ const SocialsList: FC<SocialsListProps> = ({
           key={i}
           className={`${itemClass}`}
           href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
+          /*           target="_blank"
+           */ rel="noopener noreferrer"
           title={item.name}
         >
           <i className={item.icon}></i>

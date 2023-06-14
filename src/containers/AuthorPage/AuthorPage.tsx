@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Tab } from "@headlessui/react";
 import CarCard from "components/CarCard/CarCard";
 import CommentListing from "components/CommentListing/CommentListing";
@@ -9,18 +10,44 @@ import {
   DEMO_EXPERIENCES_LISTINGS,
   DEMO_STAY_LISTINGS,
 } from "data/listings";
-import React, { FC, Fragment, useState } from "react";
+import React, { FC, Fragment, useEffect, useState } from "react";
 import Avatar from "shared/Avatar/Avatar";
 import ButtonSecondary from "shared/Button/ButtonSecondary";
 import SocialsList from "shared/SocialsList/SocialsList";
 import { Helmet } from "react-helmet";
+import { Auth } from "aws-amplify";
 
 export interface AuthorPageProps {
   className?: string;
 }
 
 const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
-  let [categories] = useState(["Stays", "Experiences", "Car for rent"]);
+  let [categories] = useState(["NFTs Fractionals", "Deals & Properties"]);
+
+  const [user, setuser] = useState();
+
+  const [profile, setProfile] = useState({});
+  const [message, setMessage] = useState("");
+  const [userID, setUserID] = useState("");
+  const [currentUser, setCurrentUser] = useState({});
+  const [currentUserName, setCurrentUserName] = useState("");
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [hasiOSSession, setHasiOSSession] = useState(false);
+  const [hasAndroidSession, setHasAndroidSession] = useState(false);
+  const [deviceOSName, setDeviceOSName] = useState("");
+  const [deviceModelName, setDeviceModelName] = useState("");
+  const [deviceName, setDeviceName] = useState("");
+  const [deviceBrand, setDeviceBrand] = useState("");
+  const [activeDate, setActiveDate] = useState("");
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser().then((user) => {
+      console.log(user);
+      setuser(user);
+    });
+  }, []);
 
   const renderSidebar = () => {
     return (
@@ -33,14 +60,16 @@ const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
 
         {/* ---- */}
         <div className="space-y-3 text-center flex flex-col items-center">
-          <h2 className="text-3xl font-semibold">Kevin Francis</h2>
+          <h2 className="text-3xl font-semibold">
+            {" "}
+            {user && user.attributes.name}
+          </h2>
           <StartRating className="!text-base" />
         </div>
 
         {/* ---- */}
         <p className="text-neutral-500 dark:text-neutral-400">
-          Providing lake views, The Symphony 9 Tam Coc in Ninh Binh provides
-          accommodation, an outdoor.
+          You will be able to edit this resume soon! Stay tune!
         </p>
 
         {/* ---- */}
@@ -70,7 +99,7 @@ const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
               />
             </svg>
             <span className="text-neutral-6000 dark:text-neutral-300">
-              Ha Noi, Viet Nam
+              Guadalajara, México
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -109,10 +138,22 @@ const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
               />
             </svg>
             <span className="text-neutral-6000 dark:text-neutral-300">
-              Joined in March 2016
+              Joined in June 2023
             </span>
           </div>
         </div>
+      </div>
+    );
+  };
+
+  const BlurredOverlay = ({ children }) => {
+    return (
+      <div style={{ position: "relative" }}>
+        <div
+          className="absolute inset-0 backdrop-filter backdrop-blur-sm rounded"
+          style={{ zIndex: 1 }}
+        ></div>
+        {children}
       </div>
     );
   };
@@ -121,7 +162,7 @@ const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
     return (
       <div className="listingSection__wrap">
         <div>
-          <h2 className="text-2xl font-semibold">Kevin Francis's listings</h2>
+          <h2 className="text-2xl font-semibold">Username (coming soon)</h2>
           <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
             Kevin Francis's listings is very rich, 5 star reviews help him to be
             more branded.
@@ -150,25 +191,35 @@ const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
             </Tab.List>
             <Tab.Panels>
               <Tab.Panel className="">
-                <div className="mt-8 grid grid-cols-1 gap-6 md:gap-7 sm:grid-cols-2">
-                  {DEMO_STAY_LISTINGS.filter((_, i) => i < 4).map((stay) => (
-                    <StayCard key={stay.id} data={stay} />
-                  ))}
-                </div>
-                <div className="flex mt-11 justify-center items-center">
-                  <ButtonSecondary>Show me more</ButtonSecondary>
+                <div>
+                  <BlurredOverlay>
+                    <div className="mt-8 grid grid-cols-1 gap-6 md:gap-7 sm:grid-cols-2">
+                      {DEMO_STAY_LISTINGS.filter((_, i) => i < 4).map(
+                        (stay) => (
+                          <StayCard key={stay.id} data={stay} />
+                        )
+                      )}
+                    </div>
+                    <div className="flex mt-11 justify-center items-center">
+                      <ButtonSecondary>Show me more</ButtonSecondary>
+                    </div>
+                  </BlurredOverlay>
                 </div>
               </Tab.Panel>
               <Tab.Panel className="">
-                <div className="mt-8 grid grid-cols-1 gap-6 md:gap-7 sm:grid-cols-2">
-                  {DEMO_EXPERIENCES_LISTINGS.filter((_, i) => i < 4).map(
-                    (stay) => (
-                      <ExperiencesCard key={stay.id} data={stay} />
-                    )
-                  )}
-                </div>
-                <div className="flex mt-11 justify-center items-center">
-                  <ButtonSecondary>Show me more</ButtonSecondary>
+                <div>
+                  <BlurredOverlay>
+                    <div className="mt-8 grid grid-cols-1 gap-6 md:gap-7 sm:grid-cols-2">
+                      {DEMO_EXPERIENCES_LISTINGS.filter((_, i) => i < 4).map(
+                        (stay) => (
+                          <ExperiencesCard key={stay.id} data={stay} />
+                        )
+                      )}
+                    </div>
+                    <div className="flex mt-11 justify-center items-center">
+                      <ButtonSecondary>Show me more</ButtonSecondary>
+                    </div>
+                  </BlurredOverlay>
                 </div>
               </Tab.Panel>
               <Tab.Panel className="">
@@ -192,18 +243,22 @@ const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
     return (
       <div className="listingSection__wrap">
         {/* HEADING */}
-        <h2 className="text-2xl font-semibold">Reviews (23 reviews)</h2>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
+        <h2 className="text-2xl font-semibold">Reviews (coming soon)</h2>
+        <div>
+          <BlurredOverlay>
+            <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
 
-        {/* comment */}
-        <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
-          <CommentListing hasListingTitle className="pb-8" />
-          <CommentListing hasListingTitle className="py-8" />
-          <CommentListing hasListingTitle className="py-8" />
-          <CommentListing hasListingTitle className="py-8" />
-          <div className="pt-8">
-            <ButtonSecondary>View more 20 reviews</ButtonSecondary>
-          </div>
+            {/* comment */}
+            <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
+              <CommentListing hasListingTitle className="pb-8" />
+              <CommentListing hasListingTitle className="py-8" />
+              <CommentListing hasListingTitle className="py-8" />
+              <CommentListing hasListingTitle className="py-8" />
+              <div className="pt-8">
+                <ButtonSecondary>View more 20 reviews</ButtonSecondary>
+              </div>
+            </div>
+          </BlurredOverlay>
         </div>
       </div>
     );
@@ -212,7 +267,7 @@ const AuthorPage: FC<AuthorPageProps> = ({ className = "" }) => {
   return (
     <div className={`nc-AuthorPage ${className}`} data-nc-id="AuthorPage">
       <Helmet>
-        <title>Login || Booking React Template</title>
+        <title>LOTUS Revenue || Profile</title>
       </Helmet>
       <main className="container mt-12 mb-24 lg:mb-32 flex flex-col lg:flex-row">
         <div className="block flex-grow mb-24 lg:mb-0">

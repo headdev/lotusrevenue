@@ -33,17 +33,13 @@ const PAGES_HIDE_HEADER_BORDER: PathName[] = [
 const SiteHeader = () => {
   const anchorRef = React.useRef<HTMLDivElement>(null);
 
-  let [headers] = React.useState<SiteHeaders[]>([
-    "Header 1",
-  ]);
+  let [headers] = React.useState<SiteHeaders[]>(["Header 1"]);
 
   let [homePages] = React.useState<HomePageItem[]>([
-   
     {
       name: "Real Estate",
       slug: "/home-2",
     },
-
   ]);
   const [headerSelected, setHeaderSelected] =
     React.useState<SiteHeaders>("Header 1");
@@ -133,9 +129,7 @@ const SiteHeader = () => {
   const renderControlSelections = () => {
     return (
       <div className="relative z-40 hidden lg:block">
-        <div className="fixed right-3 top-1/4 z-40 flex items-center">
-          
-        </div>
+        <div className="fixed right-3 top-1/4 z-40 flex items-center"></div>
       </div>
     );
   };

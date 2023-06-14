@@ -24,6 +24,8 @@ export interface LocationStates {
   "/listing-car"?: {};
   "/listing-car-map"?: {};
   "/listing-car-detail"?: {};
+  "/property-detail"?: {};
+
   //
   "/checkout"?: {};
   "/pay-done"?: {};

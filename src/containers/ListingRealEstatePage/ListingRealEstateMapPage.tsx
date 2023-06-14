@@ -47,8 +47,8 @@ const ListingRealEstateMapPage: FC<ListingRealEstateMapPageProps> = ({
         <div className="relative py-16">
           <BackgroundSection />
           <SectionSliderNewCategories
-            heading="Explore by types of stays"
-            subHeading="Explore houses based on 10 types of stays"
+            heading="Explore by types of Real State (soon)"
+            subHeading="Explore properties based on 10 types"
             categoryCardType="card5"
             itemPerRow={5}
             sliderStyle="style2"

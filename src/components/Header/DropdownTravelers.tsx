@@ -16,14 +16,14 @@ const solutions: SolutionItem[] = [
   {
     name: "Investor",
     description: "Interested in fractional properties",
-    href: "/listing-stay",
+    href: "/",
     icon: IconFour,
     active: true,
   },
   {
     name: "Buyer",
     description: "Interested in search whole properties",
-    href: "/listing-flights",
+    href: "/",
     icon: IconTwo,
   },
   /*   {

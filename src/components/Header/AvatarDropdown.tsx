@@ -6,6 +6,7 @@ import {
   HomeIcon,
   ArrowRightOnRectangleIcon,
   LifebuoyIcon,
+  CommandLineIcon,
 } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
@@ -18,32 +19,37 @@ const solutions = [
     icon: UserCircleIcon,
   },
   {
-    name: "Messages",
-    href: "##",
+    name: "Messages (soon)",
+    href: "#",
     icon: ChatBubbleBottomCenterTextIcon,
   },
   {
-    name: "Wishlists",
+    name: "Wishlists (soon)",
     href: "/account-savelists",
     icon: HeartIcon,
   },
   {
-    name: "Booking",
-    href: "##",
+    name: "Booking visits (soon)",
+    href: "#",
     icon: HomeIcon,
+  },
+  {
+    name: "AI consultant (soon)",
+    href: "#",
+    icon: CommandLineIcon,
   },
 ];
 
 const solutionsFoot = [
   {
-    name: "Help",
-    href: "##",
+    name: "Help (soon)",
+    href: "#",
     icon: LifebuoyIcon,
   },
 
   {
     name: "Logout",
-    href: "##",
+    href: "#",
     icon: ArrowRightOnRectangleIcon,
   },
 ];
@@ -75,7 +81,9 @@ export default function AvatarDropdown() {
                       <Link
                         key={index}
                         to={item.href}
-                        className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                        className={
+                          "flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                        }
                       >
                         <div className="flex items-center justify-center flex-shrink-0 text-neutral-500 dark:text-neutral-300">
                           <item.icon aria-hidden="true" className="w-6 h-6" />
@@ -92,6 +100,11 @@ export default function AvatarDropdown() {
                       <a
                         key={index}
                         href={item.href}
+                        onClick={() => {
+                          if (index === 0) {
+                            console.log("logg");
+                          }
+                        }}
                         className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       >
                         <div className="flex items-center justify-center flex-shrink-0 text-neutral-500 dark:text-neutral-300">

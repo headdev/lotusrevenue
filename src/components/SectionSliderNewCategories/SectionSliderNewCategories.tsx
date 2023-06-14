@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useEffect, useMemo } from "react";
 import Heading from "components/Heading/Heading";
 import Glide from "@glidejs/glide";
@@ -126,6 +127,18 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
     }, 100);
   }, [MY_GLIDEJS, UNIQUE_CLASS]);
 
+  const BlurredOverlay = ({ children }) => {
+    return (
+      <div style={{ position: "relative" }}>
+        <div
+          className="absolute inset-0 backdrop-filter backdrop-blur-sm rounded"
+          style={{ zIndex: 1 }}
+        ></div>
+        {children}
+      </div>
+    );
+  };
+
   const renderCard = (item: TaxonomyType, index: number) => {
     switch (categoryCardType) {
       case "card3":
@@ -149,14 +162,19 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
         >
           {heading}
         </Heading>
-        <div className="glide__track" data-glide-el="track">
-          <ul className="glide__slides">
-            {categories.map((item, index) => (
-              <li key={index} className={`glide__slide ${itemClassName}`}>
-                {renderCard(item, index)}
-              </li>
-            ))}
-          </ul>
+        <div>
+          <BlurredOverlay>
+            <div />
+            <div className="glide__track" data-glide-el="track">
+              <ul className="glide__slides">
+                {categories.map((item, index) => (
+                  <li key={index} className={`glide__slide ${itemClassName}`}>
+                    {renderCard(item, index)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </BlurredOverlay>
         </div>
 
         {sliderStyle === "style2" && (
