@@ -1,7 +1,4 @@
-// @ts-nocheck
-import React from "react";
-import MyRouter from "routers/index";
-
+import * as React from "react";
 import {
   RainbowKitProvider,
   getDefaultWallets,
@@ -92,16 +89,15 @@ const wagmiConfig = createConfig({
   webSocketPublicClient,
 });
 
-function App() {
+export function Providers({ children }) {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains} appInfo={dAppInfo}>
-        <div className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
-          <MyRouter />
-        </div>
+        {mounted && children}
       </RainbowKitProvider>
     </WagmiConfig>
   );
 }
-
-export default App;
