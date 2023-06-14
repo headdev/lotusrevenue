@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Popover, Transition } from "@headlessui/react";
 import {
   UserCircleIcon,
@@ -9,6 +10,7 @@ import {
   CommandLineIcon,
 } from "@heroicons/react/24/outline";
 import { SparklesIcon } from "@heroicons/react/24/solid";
+import { Auth } from "aws-amplify";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Avatar from "shared/Avatar/Avatar";
@@ -106,9 +108,11 @@ export default function AvatarDropdown() {
                       <a
                         key={index}
                         href={item.href}
-                        onClick={() => {
-                          if (index === 0) {
-                            console.log("logg");
+                        onClick={async () => {
+                          console.log("logg", index);
+                          if (index === 1) {
+                            await Auth.signOut();
+                            console.log("User Logout");
                           }
                         }}
                         className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
