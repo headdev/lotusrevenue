@@ -26,7 +26,7 @@ const AccountPass = () => {
               <Input type="password" className="mt-1.5" />
             </div>
             <div className="pt-2">
-              <ButtonPrimary>Update password</ButtonPrimary>
+              <ButtonPrimary disabled={true}>Update password</ButtonPrimary>
             </div>
           </div>
         </div>

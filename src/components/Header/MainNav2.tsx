@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC } from "react";
 import Logo from "shared/Logo/Logo";
 import MenuBar from "shared/MenuBar/MenuBar";
@@ -11,6 +12,7 @@ import { Link } from "react-router-dom";
 import HeroSearchForm2MobileFactory from "components/HeroSearchForm2Mobile/HeroSearchForm2MobileFactory";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
 import Navigation from "shared/Navigation/Navigation";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export interface MainNav2Props {
   className?: string;
@@ -47,7 +49,9 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
             >
               Connect wallet
             </Link> */}
-            <ButtonPrimary href="">Connect Wallet</ButtonPrimary>
+            {/*             <ButtonPrimary href="">Connect Wallet</ButtonPrimary>
+             */}{" "}
+            <ConnectButton />
             <div></div>
             <SwitchDarkMode className="hide" />{" "}
             <div className="pr-1.5">

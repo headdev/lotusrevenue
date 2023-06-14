@@ -15,6 +15,8 @@ import SelectorApp from "SelectorApp";
 import { Authenticator } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import awsExports from "./aws-exports";
+import "@rainbow-me/rainbowkit/styles.css";
+
 Amplify.configure(awsExports);
 
 const root = ReactDOM.createRoot(

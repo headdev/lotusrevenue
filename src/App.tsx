@@ -6,6 +6,7 @@ import {
   RainbowKitProvider,
   getDefaultWallets,
   connectorsForWallets,
+  darkTheme,
 } from "@rainbow-me/rainbowkit";
 import {
   argentWallet,
@@ -95,7 +96,20 @@ const wagmiConfig = createConfig({
 function App() {
   return (
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains} appInfo={dAppInfo}>
+      <RainbowKitProvider
+        chains={chains}
+        appInfo={dAppInfo}
+        theme={darkTheme({
+          accentColor: "#0991b1",
+          accentColorForeground: "white",
+          borderRadius: "small",
+          fontStack: "system",
+          overlayBlur: "small",
+          connectButtonBackground: "#0991b1",
+          menuItemBackground: "#0991b1",
+          modalBackground: "#0991b1",
+        })}
+      >
         <div className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
           <MyRouter />
         </div>

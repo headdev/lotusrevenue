@@ -46,10 +46,10 @@ const AccountPage: FC<AccountPageProps> = ({ className = "" }) => {
 
                   <span className="mt-1 text-xs">Change Image</span>
                 </div>
-                <input
+                {/*  <input
                   type="file"
                   className="absolute inset-0 opacity-0 cursor-pointer"
-                />
+                /> */}
               </div>
             </div>
             <div className="flex-grow mt-10 md:mt-0 md:pl-16 max-w-3xl space-y-6">
@@ -101,7 +101,7 @@ const AccountPage: FC<AccountPageProps> = ({ className = "" }) => {
                 <Textarea className="mt-1.5" defaultValue="..." />
               </div>
               <div className="pt-2">
-                <ButtonPrimary>Update info</ButtonPrimary>
+                <ButtonPrimary disabled={true}>Update info</ButtonPrimary>
               </div>
             </div>
           </div>

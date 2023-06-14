@@ -8,6 +8,7 @@ import {
   LifebuoyIcon,
   CommandLineIcon,
 } from "@heroicons/react/24/outline";
+import { SparklesIcon } from "@heroicons/react/24/solid";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Avatar from "shared/Avatar/Avatar";
@@ -15,8 +16,13 @@ import Avatar from "shared/Avatar/Avatar";
 const solutions = [
   {
     name: "Account",
-    href: "/author",
+    href: "/account",
     icon: UserCircleIcon,
+  },
+  {
+    name: "See as Agent",
+    href: "/author",
+    icon: SparklesIcon,
   },
   {
     name: "Messages (soon)",

@@ -9,11 +9,13 @@ import convertNumbThousand from "utils/convertNumbThousand";
 export interface CardAuthorBox2Props {
   className?: string;
   author: AuthorType;
+  country?: string;
 }
 
 const CardAuthorBox2: FC<CardAuthorBox2Props> = ({
   className = "",
   author,
+  country,
 }) => {
   const { displayName, href = "/", avatar, jobName, count, bgImage } = author;
   return (

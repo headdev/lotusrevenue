@@ -32,9 +32,11 @@ const HeroSearchForm2Mobile = () => {
         <MagnifyingGlassIcon className="flex-shrink-0 w-5 h-5" />
 
         <div className="ml-3 flex-1 text-left overflow-hidden">
-          <span className="block font-medium text-sm">Where to?</span>
+          <span className="block font-medium text-sm">
+            Looking for a investment?
+          </span>
           <span className="block mt-0.5 text-xs font-light text-neutral-500 dark:text-neutral-400 line-clamp-1">
-            Anywhere • Any week • Add guests
+            Anywhere • Any week • check properties
           </span>
         </div>
 
@@ -84,28 +86,24 @@ const HeroSearchForm2Mobile = () => {
                       </div>
 
                       <Tab.List className="pt-12 flex w-full justify-center font-semibold text-sm sm:text-base text-neutral-500 dark:text-neutral-400 space-x-6 sm:space-x-8">
-                        {["Stay", "Experiences", "Cars", "Flights"].map(
-                          (item, index) => (
-                            <Tab key={index} as={Fragment}>
-                              {({ selected }) => (
-                                <div className="relative focus:outline-none focus-visible:ring-0 outline-none select-none">
-                                  <div
-                                    className={`${
-                                      selected
-                                        ? "text-black dark:text-white"
-                                        : ""
-                                    }  `}
-                                  >
-                                    {item}
-                                  </div>
-                                  {selected && (
-                                    <span className="absolute inset-x-0 top-full border-b-2 border-black dark:border-white"></span>
-                                  )}
+                        {["Search Real State Property"].map((item, index) => (
+                          <Tab key={index} as={Fragment}>
+                            {({ selected }) => (
+                              <div className="relative focus:outline-none focus-visible:ring-0 outline-none select-none">
+                                <div
+                                  className={`${
+                                    selected ? "text-black dark:text-white" : ""
+                                  }  `}
+                                >
+                                  {item}
                                 </div>
-                              )}
-                            </Tab>
-                          )
-                        )}
+                                {selected && (
+                                  <span className="absolute inset-x-0 top-full border-b-2 border-black dark:border-white"></span>
+                                )}
+                              </div>
+                            )}
+                          </Tab>
+                        ))}
                       </Tab.List>
                       <div className="flex-1 pt-3 px-1.5 sm:px-4 flex overflow-hidden">
                         <Tab.Panels className="flex-1 overflow-y-auto hiddenScrollbar py-4">

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import CardAuthorBox from "components/CardAuthorBox/CardAuthorBox";
 import CardAuthorBox2 from "components/CardAuthorBox2/CardAuthorBox2";
 import Heading from "components/Heading/Heading";
@@ -28,17 +29,22 @@ const SectionGridAuthorBox: FC<SectionGridAuthorBoxProps> = ({
       data-nc-id="SectionGridAuthorBox"
     >
       <Heading desc="Rating based on customer reviews" isCenter>
-        Top 10 author of the month
+        Top 10 agents of the month
       </Heading>
       <div className={`grid gap-6 md:gap-8 ${gridClassName}`}>
         {authors.map((author, index) =>
           boxCard === "box2" ? (
-            <CardAuthorBox2 key={author.id} author={author} />
+            <CardAuthorBox2
+              key={author.id}
+              author={author}
+              country={author.country}
+            />
           ) : (
             <CardAuthorBox
               index={index < 3 ? index + 1 : undefined}
               key={author.id}
               author={author}
+              country={author.country}
             />
           )
         )}

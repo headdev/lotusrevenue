@@ -4,6 +4,8 @@ import LocationInput from "../LocationInput";
 import DatesRangeInput from "../DatesRangeInput";
 import { GuestsObject } from "components/HeroSearchForm/type";
 import converSelectedDateToString from "utils/converSelectedDateToString";
+import PriceRangeInput from "../(real-estate-search-form)/PriceRangeInput";
+import PropertyTypeSelect from "components/HeroSearchForm/(real-estate-search-form)/PropertyTypeSelect";
 
 const StaySearchForm = () => {
   //
@@ -48,6 +50,21 @@ const StaySearchForm = () => {
             }}
           />
         )}
+      </div>
+    );
+  };
+
+  const renderTypes = () => {
+    const isActive = fieldNameShow === "location";
+    return (
+      <div
+        className={`w-full bg-white dark:bg-neutral-800 ${
+          isActive
+            ? "rounded-2xl shadow-lg"
+            : "rounded-xl shadow-[0px_2px_2px_0px_rgba(0,0,0,0.25)]"
+        }`}
+      >
+        {!isActive ? <PropertyTypeSelect /> : <PropertyTypeSelect />}
       </div>
     );
   };
@@ -124,9 +141,8 @@ const StaySearchForm = () => {
         {/*  */}
         {renderInputLocation()}
         {/*  */}
-        {renderInputDates()}
-        {/*  */}
-        {renderInputGuests()}
+        {renderTypes()}
+        <PriceRangeInput />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React from "react";
 import ButtonClose from "shared/ButtonClose/ButtonClose";
 import Logo from "shared/Logo/Logo";
@@ -10,6 +11,7 @@ import SocialsList from "shared/SocialsList/SocialsList";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import SwitchDarkMode from "shared/SwitchDarkMode/SwitchDarkMode";
 import LangDropdown from "components/Header/LangDropdown";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export interface NavMobileProps {
   data?: NavItemType[];
@@ -141,7 +143,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ButtonPrimary>Get Mobile App</ButtonPrimary>
+          <ConnectButton />
         </a>
 
         <LangDropdown panelClassName="z-10 w-screen max-w-[280px] px-4 mb-3 -right-3 bottom-full sm:px-0" />
