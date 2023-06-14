@@ -177,3 +177,123 @@ export declare type Comment = LazyLoading extends LazyLoadingDisabled ? EagerCom
 export declare const Comment: (new (init: ModelInit<Comment>) => Comment) & {
   copyOf(source: Comment, mutator: (draft: MutableModel<Comment>) => MutableModel<Comment> | void): Comment;
 }
+
+type EagerNotification = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Notification, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+  readonly timestamp: string;
+  readonly type: string;
+  readonly time12h: string;
+  readonly date: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyNotification = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Notification, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+  readonly timestamp: string;
+  readonly type: string;
+  readonly time12h: string;
+  readonly date: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Notification = LazyLoading extends LazyLoadingDisabled ? EagerNotification : LazyNotification
+
+export declare const Notification: (new (init: ModelInit<Notification>) => Notification) & {
+  copyOf(source: Notification, mutator: (draft: MutableModel<Notification>) => MutableModel<Notification> | void): Notification;
+}
+
+type EagerNoticiaPrincipal = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<NoticiaPrincipal, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title: string;
+  readonly subtitle: string;
+  readonly publishedDate: string;
+  readonly source: string;
+  readonly timestamp: string;
+  readonly externalUrl: string;
+  readonly portada: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyNoticiaPrincipal = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<NoticiaPrincipal, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title: string;
+  readonly subtitle: string;
+  readonly publishedDate: string;
+  readonly source: string;
+  readonly timestamp: string;
+  readonly externalUrl: string;
+  readonly portada: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type NoticiaPrincipal = LazyLoading extends LazyLoadingDisabled ? EagerNoticiaPrincipal : LazyNoticiaPrincipal
+
+export declare const NoticiaPrincipal: (new (init: ModelInit<NoticiaPrincipal>) => NoticiaPrincipal) & {
+  copyOf(source: NoticiaPrincipal, mutator: (draft: MutableModel<NoticiaPrincipal>) => MutableModel<NoticiaPrincipal> | void): NoticiaPrincipal;
+}
+
+type EagerNoticia = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Noticia, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title: string;
+  readonly subtitle: string;
+  readonly publishedDate: string;
+  readonly timestamp: string;
+  readonly time12h: string;
+  readonly type: string;
+  readonly externalUrl?: string | null;
+  readonly optionalImage?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyNoticia = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Noticia, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title: string;
+  readonly subtitle: string;
+  readonly publishedDate: string;
+  readonly timestamp: string;
+  readonly time12h: string;
+  readonly type: string;
+  readonly externalUrl?: string | null;
+  readonly optionalImage?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Noticia = LazyLoading extends LazyLoadingDisabled ? EagerNoticia : LazyNoticia
+
+export declare const Noticia: (new (init: ModelInit<Noticia>) => Noticia) & {
+  copyOf(source: Noticia, mutator: (draft: MutableModel<Noticia>) => MutableModel<Noticia> | void): Noticia;
+}

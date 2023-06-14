@@ -5,13 +5,9 @@
     "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "lottusd255b4ba",
     "userPoolName": "lottus",
-    "autoVerifiedAttributes": [
-      "email"
-    ],
+    "autoVerifiedAttributes": ["email"],
     "mfaConfiguration": "OFF",
-    "mfaTypes": [
-      "SMS Text Message"
-    ],
+    "mfaTypes": ["SMS Text Message"],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "LOTUS REVENUE | Verification code: {####}",
@@ -24,10 +20,7 @@
       "Requires Symbols",
       "Requires Uppercase"
     ],
-    "requiredAttributes": [
-      "email",
-      "name"
-    ],
+    "requiredAttributes": ["email", "name"],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
@@ -39,9 +32,7 @@
     "resourceName": "lottus",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
-    "usernameAttributes": [
-      "email"
-    ],
+    "usernameAttributes": ["email"],
     "useDefault": "manual",
     "userPoolGroups": false,
     "userPoolGroupList": [],
@@ -50,10 +41,7 @@
     "authProviders": [],
     "hostedUI": true,
     "hostedUIDomainName": "wtp4orzt1uch",
-    "authProvidersUserPool": [
-      "Facebook",
-      "Google"
-    ],
+    "authProvidersUserPool": ["Facebook", "Google"],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"sub\"}}]",
     "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://raizdex.com.auth.us-east1.amazoncognito.com/oauth2/idpresponse\"],\"LogoutURLs\":[\"https://raizdex.com.auth.us-east1.amazoncognito.com/oauth2/idpresponse\"]}",
     "usernameCaseSensitive": false,

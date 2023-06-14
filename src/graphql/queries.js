@@ -75,6 +75,127 @@ export const listUsers = /* GraphQL */ `
     }
   }
 `;
+export const getNotification = /* GraphQL */ `
+  query GetNotification($id: ID!) {
+    getNotification(id: $id) {
+      id
+      title
+      description
+      timestamp
+      type
+      time12h
+      date
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listNotifications = /* GraphQL */ `
+  query ListNotifications(
+    $filter: ModelNotificationFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNotifications(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        description
+        timestamp
+        type
+        time12h
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getNoticiaPrincipal = /* GraphQL */ `
+  query GetNoticiaPrincipal($id: ID!) {
+    getNoticiaPrincipal(id: $id) {
+      id
+      title
+      subtitle
+      publishedDate
+      source
+      timestamp
+      externalUrl
+      portada
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listNoticiaPrincipals = /* GraphQL */ `
+  query ListNoticiaPrincipals(
+    $filter: ModelNoticiaPrincipalFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNoticiaPrincipals(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        subtitle
+        publishedDate
+        source
+        timestamp
+        externalUrl
+        portada
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getNoticia = /* GraphQL */ `
+  query GetNoticia($id: ID!) {
+    getNoticia(id: $id) {
+      id
+      title
+      subtitle
+      publishedDate
+      timestamp
+      time12h
+      type
+      externalUrl
+      optionalImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listNoticias = /* GraphQL */ `
+  query ListNoticias(
+    $filter: ModelNoticiaFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNoticias(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        subtitle
+        publishedDate
+        timestamp
+        time12h
+        type
+        externalUrl
+        optionalImage
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getRealState = /* GraphQL */ `
   query GetRealState($id: ID!) {
     getRealState(id: $id) {

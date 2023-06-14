@@ -124,6 +124,162 @@ export const onDeleteUser = /* GraphQL */ `
     }
   }
 `;
+export const onCreateNotification = /* GraphQL */ `
+  subscription OnCreateNotification(
+    $filter: ModelSubscriptionNotificationFilterInput
+  ) {
+    onCreateNotification(filter: $filter) {
+      id
+      title
+      description
+      timestamp
+      type
+      time12h
+      date
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateNotification = /* GraphQL */ `
+  subscription OnUpdateNotification(
+    $filter: ModelSubscriptionNotificationFilterInput
+  ) {
+    onUpdateNotification(filter: $filter) {
+      id
+      title
+      description
+      timestamp
+      type
+      time12h
+      date
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteNotification = /* GraphQL */ `
+  subscription OnDeleteNotification(
+    $filter: ModelSubscriptionNotificationFilterInput
+  ) {
+    onDeleteNotification(filter: $filter) {
+      id
+      title
+      description
+      timestamp
+      type
+      time12h
+      date
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateNoticiaPrincipal = /* GraphQL */ `
+  subscription OnCreateNoticiaPrincipal(
+    $filter: ModelSubscriptionNoticiaPrincipalFilterInput
+  ) {
+    onCreateNoticiaPrincipal(filter: $filter) {
+      id
+      title
+      subtitle
+      publishedDate
+      source
+      timestamp
+      externalUrl
+      portada
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateNoticiaPrincipal = /* GraphQL */ `
+  subscription OnUpdateNoticiaPrincipal(
+    $filter: ModelSubscriptionNoticiaPrincipalFilterInput
+  ) {
+    onUpdateNoticiaPrincipal(filter: $filter) {
+      id
+      title
+      subtitle
+      publishedDate
+      source
+      timestamp
+      externalUrl
+      portada
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteNoticiaPrincipal = /* GraphQL */ `
+  subscription OnDeleteNoticiaPrincipal(
+    $filter: ModelSubscriptionNoticiaPrincipalFilterInput
+  ) {
+    onDeleteNoticiaPrincipal(filter: $filter) {
+      id
+      title
+      subtitle
+      publishedDate
+      source
+      timestamp
+      externalUrl
+      portada
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateNoticia = /* GraphQL */ `
+  subscription OnCreateNoticia($filter: ModelSubscriptionNoticiaFilterInput) {
+    onCreateNoticia(filter: $filter) {
+      id
+      title
+      subtitle
+      publishedDate
+      timestamp
+      time12h
+      type
+      externalUrl
+      optionalImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateNoticia = /* GraphQL */ `
+  subscription OnUpdateNoticia($filter: ModelSubscriptionNoticiaFilterInput) {
+    onUpdateNoticia(filter: $filter) {
+      id
+      title
+      subtitle
+      publishedDate
+      timestamp
+      time12h
+      type
+      externalUrl
+      optionalImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteNoticia = /* GraphQL */ `
+  subscription OnDeleteNoticia($filter: ModelSubscriptionNoticiaFilterInput) {
+    onDeleteNoticia(filter: $filter) {
+      id
+      title
+      subtitle
+      publishedDate
+      timestamp
+      time12h
+      type
+      externalUrl
+      optionalImage
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateRealState = /* GraphQL */ `
   subscription OnCreateRealState(
     $filter: ModelSubscriptionRealStateFilterInput

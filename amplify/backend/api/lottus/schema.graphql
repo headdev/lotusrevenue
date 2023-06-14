@@ -1,4 +1,4 @@
-type User @model @auth(rules: [{allow: public}]) {
+type User @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String
   phone_number: String
@@ -17,7 +17,40 @@ type User @model @auth(rules: [{allow: public}]) {
   properties: [RealState] @hasMany(indexName: "byUser", fields: ["id"])
 }
 
-type RealState @model @auth(rules: [{allow: public}]) {
+type Notification @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  title: String!
+  description: String!
+  timestamp: String!
+  type: String!
+  time12h: String!
+  date: String!
+}
+
+type NoticiaPrincipal @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  title: String!
+  subtitle: String!
+  publishedDate: String!
+  source: String!
+  timestamp: String!
+  externalUrl: String!
+  portada: String!
+}
+
+type Noticia @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  title: String!
+  subtitle: String!
+  publishedDate: String!
+  timestamp: String!
+  time12h: String!
+  type: String!
+  externalUrl: String
+  optionalImage: String
+}
+
+type RealState @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String!
   posts: [Post] @hasMany(indexName: "byRealState", fields: ["id"])
@@ -34,7 +67,7 @@ type RealState @model @auth(rules: [{allow: public}]) {
   userID: ID! @index(name: "byUser")
 }
 
-type Post @model @auth(rules: [{allow: public}]) {
+type Post @model @auth(rules: [{ allow: public }]) {
   id: ID!
   title: String!
   comments: [Comment] @hasMany
@@ -45,10 +78,9 @@ type Post @model @auth(rules: [{allow: public}]) {
   posts: RealState @belongsTo(fields: ["rID"])
 }
 
-type Comment @model @auth(rules: [{allow: public}]) {
+type Comment @model @auth(rules: [{ allow: public }]) {
   id: ID!
   post: Post! @belongsTo
   content: String!
   author: User! @hasOne
 }
- 
