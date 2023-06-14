@@ -3,19 +3,15 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "lottus57b62b5e",
+    "resourceNameTruncated": "lottusab77f661",
     "userPoolName": "lottus",
-    "autoVerifiedAttributes": [
-      "email"
-    ],
+    "autoVerifiedAttributes": ["email"],
     "mfaConfiguration": "OFF",
-    "mfaTypes": [
-      "SMS Text Message"
-    ],
+    "mfaTypes": ["SMS Text Message"],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification code: {####}",
-    "emailVerificationMessage": "Verification code: {####}",
+    "emailVerificationSubject": "LOTUS REVENUE || Verification code: {####}",
+    "emailVerificationMessage": "LOTUS REVENUE || Verification code: {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [
@@ -24,25 +20,19 @@
       "Requires Symbols",
       "Requires Uppercase"
     ],
-    "requiredAttributes": [
-      "email",
-      "name",
-      "phone_number"
-    ],
+    "requiredAttributes": ["email", "phone_number", "name"],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "lottus57b62b5e_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "lottusab77f661_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "57b62b5e",
+    "sharedId": "ab77f661",
     "resourceName": "lottus",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
-    "usernameAttributes": [
-      "email"
-    ],
+    "usernameAttributes": ["email"],
     "useDefault": "manual",
     "userPoolGroups": false,
     "userPoolGroupList": [],

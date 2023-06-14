@@ -57,14 +57,16 @@ type RealState @model @auth(rules: [{ allow: public }]) {
   priceUSD: String!
   title: String!
   description: String!
-  bedroom: Int!
   createdAt: String!
   updatedAt: String!
+  bedrooms: Int!
   bathrooms: Int!
   area: Float!
   country: String!
   score: Float
   amenities: [String]
+  gallery: [String]
+  cover: String
   surplusValue: Float
   profitability: Float
   city: String!

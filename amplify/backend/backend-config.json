@@ -42,8 +42,8 @@
         },
         "signupAttributes": [
           "EMAIL",
-          "NAME",
-          "PHONE_NUMBER"
+          "PHONE_NUMBER",
+          "NAME"
         ],
         "socialProviders": [],
         "usernameAttributes": [

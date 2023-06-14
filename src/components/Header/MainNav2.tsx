@@ -47,15 +47,14 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
             >
               Connect wallet
             </Link> */}
-            <ButtonPrimary href="/login">Log In</ButtonPrimary>
+            <ButtonPrimary href="">Connect Wallet</ButtonPrimary>
             <div></div>
             <SwitchDarkMode className="hide" />{" "}
             <div className="pr-1.5">
-              {/*               <NotifyDropdown className="-ml-2 xl:-ml-1" />
+              {/*               <NotifyDropdown className="-ml-2 xl:-ml-1" />{" "}
                */}{" "}
             </div>
-            {/*             <AvatarDropdown />
-             */}{" "}
+            <AvatarDropdown />{" "}
           </div>
           <div className="flex items-center space-x-2 lg:hidden">
             {/*             <NotifyDropdown />
