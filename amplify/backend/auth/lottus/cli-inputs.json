@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "lottus6dec46c0",
+    "resourceNameTruncated": "lottusd255b4ba",
     "userPoolName": "lottus",
     "autoVerifiedAttributes": [
       "email"
@@ -26,8 +26,6 @@
     ],
     "requiredAttributes": [
       "email",
-      "phone_number",
-      "birthdate",
       "name"
     ],
     "aliasAttributes": [],
@@ -35,9 +33,9 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "lottus6dec46c0_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "lottusd255b4ba_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "6dec46c0",
+    "sharedId": "d255b4ba",
     "resourceName": "lottus",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
@@ -50,6 +48,14 @@
     "adminQueries": false,
     "thirdPartyAuth": false,
     "authProviders": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "wtp4orzt1uch",
+    "authProvidersUserPool": [
+      "Facebook",
+      "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://raizdex.com.auth.us-east1.amazoncognito.com/oauth2/idpresponse\"],\"LogoutURLs\":[\"https://raizdex.com.auth.us-east1.amazoncognito.com/oauth2/idpresponse\"]}",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true
   }
