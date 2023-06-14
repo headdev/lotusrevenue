@@ -42,12 +42,10 @@
         },
         "signupAttributes": [
           "EMAIL",
-          "NAME"
+          "NAME",
+          "PHONE_NUMBER"
         ],
-        "socialProviders": [
-          "FACEBOOK",
-          "GOOGLE"
-        ],
+        "socialProviders": [],
         "usernameAttributes": [
           "EMAIL"
         ],

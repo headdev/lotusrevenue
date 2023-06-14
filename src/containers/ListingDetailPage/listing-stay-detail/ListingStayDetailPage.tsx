@@ -445,7 +445,7 @@ const StayDetailPageContainer: FC<{}> = () => {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAGVJfZMAKYfZ71nzL_v5i3LjTTWnCYwTY&q=Eiffel+Tower,Paris+France"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD4tbkObs5_VZoEvhOqmQaWRVwCyVtzNik&q=Eiffel+Tower,Paris+France"
             ></iframe>
           </div>
         </div>

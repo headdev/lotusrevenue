@@ -79,7 +79,7 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
               defaultZoom={12}
               defaultCenter={DEMO_STAYS[0].map}
               bootstrapURLKeys={{
-                key: "AIzaSyAGVJfZMAKYfZ71nzL_v5i3LjTTWnCYwTY",
+                key: "AIzaSyD4tbkObs5_VZoEvhOqmQaWRVwCyVtzNik",
               }}
               yesIWantToUseGoogleMapApiInternals
             >

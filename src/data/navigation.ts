@@ -61,14 +61,12 @@ const megaMenuDemo: MegamenuItem[] = [
 ];
 
 const demoChildMenus: NavItemType[] = [
-
   {
     id: ncNanoId(),
     href: "/home-2",
     name: "Real Estate",
     isNew: true,
   },
- 
 ];
 
 const otherPageChildMenus: NavItemType[] = [
@@ -177,22 +175,22 @@ const templatesChildrenMenus: NavItemType[] = [
 ];
 
 export const NAVIGATION_DEMO: NavItemType[] = [
-  {
+  /*  {
     id: ncNanoId(),
     href: "/",
     name: "Home",
     type: "dropdown",
     children: demoChildMenus,
     isNew: true,
-  },
-  {
+  }, */
+  /*  {
     id: ncNanoId(),
     href: "/unique_id_",
     name: "Five columns",
     type: "megaMenu",
     megaMenu: megaMenuDemo,
-  },
-  {
+  }, */
+  /* {
     id: ncNanoId(),
     href: "/listing-stay",
     name: "Listing Page",
@@ -283,20 +281,24 @@ export const NAVIGATION_DEMO: NavItemType[] = [
         isNew: true,
       },
     ],
-  },
-  {
+  }, */
+  /* {
     id: ncNanoId(),
     href: "/author",
     name: "Templates",
     type: "dropdown",
     children: templatesChildrenMenus,
-  },
-
+  }, */
   {
+    id: ncNanoId(),
+    href: "/about",
+    name: "About",
+  },
+  /*  {
     id: ncNanoId(),
     href: "/blog",
     name: "Other pages",
     type: "dropdown",
     children: otherPageChildMenus,
-  },
+  }, */
 ];

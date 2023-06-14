@@ -48,8 +48,8 @@ import ListingCarDetailPage from "containers/ListingDetailPage/listing-car-detai
 import ListingExperiencesDetailPage from "containers/ListingDetailPage/listing-experiences-detail/ListingExperiencesDetailPage";
 
 export const pages: Page[] = [
-  { path: "/", exact: true, component: PageHome },
-  { path: "/#", exact: true, component: PageHome },
+  { path: "/", exact: true, component: ListingRealEstateMapPage },
+  { path: "/#", exact: true, component: ListingRealEstateMapPage },
   { path: "/home-2", component: PageHome2 },
   { path: "/home-3", component: PageHome3 },
   //
